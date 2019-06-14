@@ -1,0 +1,24 @@
+{
+  "name": "gulp_boilerplate",
+  "version": "1.0.0",
+  "description": "My boilerplate for building web projects",
+  "main": "index.js",
+  "repository": "https://github.com/soloveydenisweb/gulp_boilerplate.git",
+  "author": "Denis Solovey <solovey_denis@outlook.com>",
+  "license": "MIT",
+  "private": false,
+  "browserslist": [
+    "last 2 version",
+    "> 1%",
+    "IE 10"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^9.6.0",
+    "browser-sync": "^2.26.7",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5"
+  }
+}
