@@ -13,12 +13,23 @@
     "IE 10"
   ],
   "devDependencies": {
+    "@babel/core": "^7.4.5",
     "autoprefixer": "^9.6.0",
     "browser-sync": "^2.26.7",
     "cssnano": "^4.1.10",
     "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-beautify-code": "^2.0.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-copy": "^4.0.1",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-minify": "^3.1.0",
     "gulp-postcss": "^8.0.0",
+    "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5"
+  },
+  "dependencies": {
+    "remove": "^0.1.5"
   }
 }
