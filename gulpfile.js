@@ -1,7 +1,8 @@
+// Объявляем переменные
 var gulp = require("gulp"),
 	sass = require("gulp-sass"),
-	pug = require("gulp-pug");
-	beautifyCode = require("gulp-beautify-code");
+	pug = require("gulp-pug"),
+	beautifyCode = require("gulp-beautify-code"),
 	postcss = require("gulp-postcss"),
 	autoprefixer = require("autoprefixer"),
 	cssnano = require("cssnano"),
@@ -12,6 +13,7 @@ var gulp = require("gulp"),
   babel = require("gulp-babel"),
 	browserSync = require("browser-sync").create();
 
+// Прописываем пути
 var paths = {
 	styles: {
 		src: "src/sass/*.sass",
@@ -43,6 +45,7 @@ var paths = {
 	}
 };
 
+// Настраиваем компиляцию sass в css и плагины autoprefixer и cssnano
 function style() {
 	return gulp
 		.src(paths.styles.src)
@@ -52,12 +55,13 @@ function style() {
 		.pipe(postcss([autoprefixer({
 			cascade: false,
 			grid: 'autoplace'
-		}), cssnano()]))
+    }), cssnano()]))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(paths.styles.dest))
 		.pipe(browserSync.stream());
 }
 
+// Настраиваем компиляцию pug в html
 function views() {
 	return gulp
 		.src(paths.views.src)
@@ -66,6 +70,7 @@ function views() {
 		.pipe(browserSync.stream());
 }
 
+// Делаем html-файл красивым
 function beautify() {
 	return gulp
 		.src(paths.beautify.src)
@@ -78,6 +83,7 @@ function beautify() {
 		.pipe(browserSync.stream());
 }
 
+// Оптимизируем изображения
 function images() {
 	return gulp
 		.src(paths.images.src)
@@ -105,6 +111,7 @@ function images() {
 		.pipe(browserSync.stream());
 }
 
+// Транспилируем ES6 в ES5, а также конкатенируем и минифируем файлы со скриптами
 function scripts() {
 	return gulp
 	.src(paths.scripts.src)
@@ -117,6 +124,7 @@ function scripts() {
 	.pipe(browserSync.stream());
 }
 
+// Переносим фавиконки в продакшн
 function copyFavs() {
   return gulp
     .src(paths.favs.src)
@@ -124,6 +132,7 @@ function copyFavs() {
 	  .pipe(browserSync.stream());
 }
 
+// Переносим шрифты в продакшн
 function copyFonts() {
   return gulp
     .src(paths.fonts.src)
@@ -135,6 +144,7 @@ function reload() {
 	browserSync.reload();
 }
 
+// Отслеживаем изменения
 function watch() {
 	browserSync.init({
 		server: {
